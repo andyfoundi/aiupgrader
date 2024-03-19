@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  aiupgrader:
+    container_name: ai_angularjs_upgrader
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai_angularjs_upgrader
+    working_dir: /repo
+    command: ["bash"]
+    volumes:
+        - ${PWD}:/ai
+        - ${REPO:-$PWD}:/repo
